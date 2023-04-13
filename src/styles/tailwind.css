@@ -1,0 +1,36 @@
+@import url("https://fonts.cdnfonts.com/css/avenir");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.product--list {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.aside--cate::-webkit-scrollbar-thumb,
+.cartItems::-webkit-scrollbar-thumb {
+  background: #fa7862;
+  border-radius: 10px;
+  width: 2px;
+}
+
+.aside--cate::-webkit-scrollbar-thumb:hover,
+.cartItems::-webkit-scrollbar-thumb:hover {
+  background: #f94e30;
+}
+
+.aside--cate::-webkit-scrollbar,
+.cartItems::-webkit-scrollbar {
+  width: 7px;
+}
+.product {
+  transition: 0.3 ease;
+}
+.product:hover {
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 5%), 0 2px 4px 0 rgb(0 0 0 / 4%);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
