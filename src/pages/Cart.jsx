@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ToggleLayout from "../components/Layout/ToggleLayout";
 import { useDispatch, useSelector } from "react-redux";
-import CartItem from "../components/Common/CartItem";
+import CartPageItem from "../components/Common/CartPageItem";
 import Button from "../components/Common/Button";
 import { calcTotal, clearCart } from "../store/cart/cartSlice";
 import formatter from "../utils/formatter";
@@ -42,7 +42,9 @@ function Cart() {
               </ul>
               <ul className="mt-6 bg-white">
                 {cartItems.map((cartItem, idx) => {
-                  return <CartItem key={cartItem.id} {...cartItem} idx={idx} />;
+                  return (
+                    <CartPageItem key={cartItem.id} {...cartItem} idx={idx} />
+                  );
                 })}
               </ul>
               <div
@@ -58,12 +60,12 @@ function Cart() {
                   <span>CLEAR CART</span>
                 </button>
                 <div className="space-y-2">
-                  <h4>
+                  <p>
                     {`Total (${numberProductInCart}) items:`}{" "}
                     <span className="text-mainOrange">
                       {`$${formatter(total)}`}
                     </span>
-                  </h4>
+                  </p>
                   <Button width={"w-full"}>Check Out</Button>
                 </div>
               </div>

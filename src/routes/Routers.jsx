@@ -9,7 +9,7 @@ import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import CategoryPage from "../pages/CategoryPage";
 import SingleProduct from "../pages/SingleProduct";
-import Profile from "../pages/Profile";
+import UserProfile from "../pages/UserProfile";
 import Checkout from "../pages/Checkout";
 import ProtectedRoute from "./ProtectedRoute";
 function Routers() {
@@ -24,7 +24,7 @@ function Routers() {
           path={"account/profile"}
           element={
             <ProtectedRoute>
-              <Profile />
+              <UserProfile />
             </ProtectedRoute>
           }
         />

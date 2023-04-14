@@ -8,6 +8,7 @@ import Loader from "../components/Common/Loader";
 import ToggleLayout from "../components/Layout/ToggleLayout";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+
 function SingleProduct() {
   const { productId } = useParams();
   const dispatch = useDispatch();

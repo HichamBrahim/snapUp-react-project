@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Common/Item";
+import CartItem from "../Common/CartItem";
 import { useNavigate } from "react-router-dom";
 import Button from "../Common/Button";
 import shopping from "../../assets/shopping_cart.png";
@@ -23,7 +23,7 @@ function CartBar({ isShow, cartItems }) {
           <div>
             <ul className=" mt-3 space-y-3">
               {cartItems.map((cartItem) => {
-                return <Item key={cartItem.id} {...cartItem} />;
+                return <CartItem key={cartItem.id} {...cartItem} />;
               })}
             </ul>
             <div

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ToggleLayout from "../components/Layout/ToggleLayout";
-import ProductList from "../components/Layout/ProductList";
+import ProductsList from "../components/Layout/ProductsList";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { STATUS } from "../utils/status";
@@ -30,7 +30,7 @@ function SearchPage() {
           ) : searchProduct.length > 0 ? (
             <>
               <TitleBar category={"search products"} />
-              <ProductList products={searchProduct} />
+              <ProductsList products={searchProduct} />
             </>
           ) : (
             <div className="text-mainOrange text-2xl text-center font-medium">

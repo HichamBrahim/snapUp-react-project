@@ -39,16 +39,14 @@ function SearchBar({
           onClick={handleToggleSideBar}
         ></i>
         <i className="cursor-pointer fa-solid fa-bag-shopping"></i>
-        <Link to={"/"}>
-          <h1 className="font-bold text-2xl">
-            Snap<span className="font-normal">Up.</span>
-          </h1>
+        <Link to={"/"} className="font-bold text-2xl">
+          Snap<span className="font-normal">Up.</span>
         </Link>
       </div>
       <div className="flex flex-col flex-1 space-y-2">
         <form className="hidden justify-between items-center p-1 h-10 rounded bg-white sm:flex">
           <input
-            type="text"
+            type="search"
             placeholder="Search your prefered item here"
             className="w-full px-4 caret-mainOrange text-sm 
               font-normal border-none outline-none text-13 text-black"

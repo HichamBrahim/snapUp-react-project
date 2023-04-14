@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Common/Loader";
 import TitleBar from "../components/Common/TitleBar";
-import ProductList from "../components/Layout/ProductList";
+import ProductsList from "../components/Layout/ProductsList";
 import ToggleLayout from "../components/Layout/ToggleLayout";
 import { fetchProductsByCategory } from "../store/products/categorySlice";
 import { STATUS } from "../utils/status";
@@ -30,7 +30,7 @@ function CategoryPage() {
         <div className="container mx-auto p-4">
           <TitleBar category={category} />
           {cateProductsStatus === STATUS.SUCCEEDED ? (
-            <ProductList products={poductsByCategory} />
+            <ProductsList products={poductsByCategory} />
           ) : (
             <Loader />
           )}

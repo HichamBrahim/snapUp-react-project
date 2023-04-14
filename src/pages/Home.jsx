@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MainSlider from "../components/Layout/MainSlider";
-import ProductList from "../components/Layout/ProductList";
+import ProductsList from "../components/Layout/ProductsList";
 import ToggleLayout from "../components/Layout/ToggleLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProducts } from "../store/products/productSlice";
@@ -54,7 +54,7 @@ function Home() {
           <section className="pt-8">
             <TitleBar category={"see our products"} />
             {productStatus === STATUS.SUCCEEDED ? (
-              <ProductList products={shuffleProducts} />
+              <ProductsList products={shuffleProducts} />
             ) : (
               <Loader />
             )}
@@ -62,7 +62,7 @@ function Home() {
           <section className="pt-8">
             <TitleBar category={categories[0]} />
             {productStatus === STATUS.SUCCEEDED ? (
-              <ProductList products={catProductsOne} />
+              <ProductsList products={catProductsOne} />
             ) : (
               <Loader />
             )}
@@ -70,7 +70,7 @@ function Home() {
           <section className="pt-8">
             <TitleBar category={categories[1]} />
             {productStatus === STATUS.SUCCEEDED ? (
-              <ProductList products={catProductsTwo} />
+              <ProductsList products={catProductsTwo} />
             ) : (
               <Loader />
             )}
@@ -78,7 +78,7 @@ function Home() {
           <section className="pt-8">
             <TitleBar category={categories[2]} />
             {productStatus === STATUS.SUCCEEDED ? (
-              <ProductList products={catProductsThree} />
+              <ProductsList products={catProductsThree} />
             ) : (
               <Loader />
             )}
@@ -86,7 +86,7 @@ function Home() {
           <section className="pt-8">
             <TitleBar category={categories[3]} />
             {productStatus === STATUS.SUCCEEDED ? (
-              <ProductList products={catProductsFour} />
+              <ProductsList products={catProductsFour} />
             ) : (
               <Loader />
             )}
