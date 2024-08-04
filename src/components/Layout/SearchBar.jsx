@@ -27,7 +27,7 @@ function SearchBar({
     content = "";
   } else if (categoryStatus === STATUS.SUCCEEDED) {
     content = categories.slice(0, 8).map((category) => {
-      return <Category key={category} category={category} />;
+      return <Category key={category?.name} item={category} />;
     });
   }
 

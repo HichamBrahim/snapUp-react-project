@@ -12,8 +12,8 @@ function SideBar({ categories, categoryStatus, handleToggle }) {
     content = categories.map((category) => {
       return (
         <Category
-          key={category}
-          category={category}
+          key={category?.name}
+          item={category}
           isNavBar={true}
           handleToggle={handleToggle}
         />

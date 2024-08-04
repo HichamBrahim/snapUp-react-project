@@ -7,6 +7,7 @@ export const fetchAllCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await api.get("/products/categories");
+      console.log(resp.data,"resp.data");
       return resp.data;
     } catch (error) {
       console.log(error.message);

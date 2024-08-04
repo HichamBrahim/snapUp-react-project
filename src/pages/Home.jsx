@@ -52,45 +52,60 @@ function Home() {
       <section className="bg-WhiteSmoke py-8 mt-2">
         <div className="container p-4 mx-auto">
           <section className="pt-8">
-            <TitleBar category={"see our products"} />
+            <TitleBar category={{
+              name: "Featured Products",
+              slug: "featured-products"
+            }} />
             {productStatus === STATUS.SUCCEEDED ? (
               <ProductsList products={shuffleProducts} />
             ) : (
               <Loader />
             )}
           </section>
-          <section className="pt-8">
-            <TitleBar category={categories[0]} />
-            {productStatus === STATUS.SUCCEEDED ? (
-              <ProductsList products={catProductsOne} />
-            ) : (
-              <Loader />
-            )}
-          </section>
-          <section className="pt-8">
-            <TitleBar category={categories[1]} />
-            {productStatus === STATUS.SUCCEEDED ? (
-              <ProductsList products={catProductsTwo} />
-            ) : (
-              <Loader />
-            )}
-          </section>
-          <section className="pt-8">
+          {
+            catProductsOne.length > 0 && 
+              <section className="pt-8">
+                <TitleBar category={categories[0]} />
+                {productStatus === STATUS.SUCCEEDED ? (
+                  <ProductsList products={catProductsOne} />
+                ) : (
+                  <Loader />
+                )}
+            </section>
+          }
+          {
+            catProductsTwo.length > 0 && 
+              <section className="pt-8">
+                <TitleBar category={categories[1]} />
+                {productStatus === STATUS.SUCCEEDED ? (
+                  <ProductsList products={catProductsTwo} />
+                ) : (
+                  <Loader />
+                )}
+            </section>
+          }
+          {
+            catProductsThree.length > 0 &&
+            (<section className="pt-8">
             <TitleBar category={categories[2]} />
             {productStatus === STATUS.SUCCEEDED ? (
               <ProductsList products={catProductsThree} />
             ) : (
               <Loader />
             )}
-          </section>
-          <section className="pt-8">
+          </section>)
+          }
+          {
+            catProductsFour.length > 0 &&
+            (<section className="pt-8">
             <TitleBar category={categories[3]} />
             {productStatus === STATUS.SUCCEEDED ? (
               <ProductsList products={catProductsFour} />
             ) : (
               <Loader />
             )}
-          </section>
+          </section>)
+          }
         </div>
       </section>
     </main>

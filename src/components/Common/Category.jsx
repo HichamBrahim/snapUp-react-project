@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-function Category({ category, isNavBar, handleToggle }) {
+function Category({ item, isNavBar, handleToggle }) {
   const styledLink = isNavBar
     ? "duration-500 hover:text-mainOrange hover:pl-3"
     : "";
@@ -9,17 +9,17 @@ function Category({ category, isNavBar, handleToggle }) {
   return (
     <li className={`${styledLi} first-letter:uppercase`}>
       <Link
-        to={`/category/${category}`}
+        to={`/category/${item?.name}`}
         className={styledLink}
         onClick={handleToggle}
       >
-        {category.replace("-", " ")}
+        {item?.name}
       </Link>
     </li>
   );
 }
 Category.propTypes = {
-  category: PropTypes.node,
+  item: PropTypes.object,
   isNavBar: PropTypes.bool,
   handleToggle: PropTypes.func,
 };

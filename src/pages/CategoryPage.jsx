@@ -28,10 +28,16 @@ function CategoryPage() {
       <ToggleLayout />
       <section className="py-8 bg-WhiteSmoke min-h-75">
         <div className="container mx-auto p-4">
-          <TitleBar category={category} />
-          {cateProductsStatus === STATUS.SUCCEEDED ? (
-            <ProductsList products={poductsByCategory} />
-          ) : (
+          <TitleBar category={{
+            name: category
+            }} />
+          {cateProductsStatus === STATUS.SUCCEEDED ? 
+            poductsByCategory?.length > 0 ? 
+            <ProductsList products={poductsByCategory} /> :
+            <div className="text-center mt-20">
+              <h2 className="text-3xl font-bold text-mainOrange">No Products Found</h2>
+            </div>
+           : (
             <Loader />
           )}
         </div>
